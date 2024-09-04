@@ -4,7 +4,7 @@ import plotly.graph_objects as go
 
 st.set_page_config(page_title="Growth of R&D Expenditures", layout="wide")
 
-file_path = 'C:/Users/jbote001/OneDrive - Old Dominion University/VMASC/Tasks/NSF Growing/nsf24308-tab021.xlsx'  # Replace with the correct path to your Excel file
+file_path = 'nsf24308-tab021.xlsx'
 data = pd.read_excel(file_path)
 
 data = data.dropna(subset=['Rank']) 
