@@ -37,12 +37,24 @@ for i, institution in enumerate(institutions):
 odu_evms_data = data.loc[data['Institution'].isin(['Old Dominion U.', 'Eastern Virginia Medical School'])].iloc[:, 2:]
 odu_evms_sum = odu_evms_data.sum()
 
+
+
 fig.add_trace(go.Scatter(
     x=years,
     y=odu_evms_sum,
     mode='lines+markers',
     name='ODU + EVMS Sum',
     line=dict(width=2, dash='dash', color='red')
+))
+
+odu_data = data.loc[data['Institution'] == 'Old Dominion U.'].iloc[:, 2:]
+
+fig.add_trace(go.Scatter(
+    x=years,
+    y=odu_data.values.flatten(), 
+    mode='lines+markers',
+    name='Old Dominion U.',
+    line=dict(width=2, dash='dot', color='blue')  
 ))
 
 fig.update_layout(
